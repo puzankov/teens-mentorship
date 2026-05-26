@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Summer AI & Technology Mentorship for Teens — Sergii Puzankov</title>
+  <meta name="description" content="Personalized 1-on-1 summer mentorship for teens ages 13–18 interested in AI, technology, creativity, and entrepreneurship. Led by a 20+ year technology leader." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            amber: {
+              50:  '#fffbeb',
+              100: '#fef3c7',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+            },
+          },
+        },
+      },
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="font-body text-slate-800 bg-white antialiased">
+
+  <!-- ─── NAVIGATION ─── -->
+  <header id="top" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
+    <nav class="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between">
+      <a href="#top" class="nav-logo">
+        AI <span class="nav-logo-accent">Mentorship</span> for Teens
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-500">
+        <a href="#about" class="hover:text-slate-800 transition-colors">About</a>
+        <a href="#tracks" class="hover:text-slate-800 transition-colors">Tracks</a>
+        <a href="#how-it-works" class="hover:text-slate-800 transition-colors">How It Works</a>
+        <a href="#faq" class="hover:text-slate-800 transition-colors">FAQ</a>
+        <a href="#book" class="btn-primary ml-2">Book a Free Call</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white">
+      <div class="max-w-5xl mx-auto px-5 py-4 flex flex-col gap-4 text-sm font-medium text-slate-600">
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#tracks" class="mobile-nav-link">Tracks</a>
+        <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
+        <a href="#faq" class="mobile-nav-link">FAQ</a>
+        <a href="#book" class="btn-primary text-center mt-2">Book a Free Call</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero-section relative overflow-hidden">
+    <!-- Dark overlay for readability -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="w-full max-w-5xl mx-auto relative z-10 px-5 py-20 sm:py-28">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-amber-300 text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded-full mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block"></span>
+          Summer 2026 · Limited Spots Available
+        </div>
+
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white mb-5">
+          Summer AI &amp; Technology<br />
+          <span class="italic text-amber-400">Mentorship</span> for Teens
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-200 leading-relaxed mb-7">
+          Personalized 1-on-1 mentorship for motivated teens interested in AI, technology, creativity, and entrepreneurship. Help your teen spend the summer building real-world skills and meaningful projects.
+        </p>
+
+        <!-- Topic chips -->
+        <div class="flex flex-wrap gap-2 mb-7">
+          <span class="hero-topic-chip">🤖 AI &amp; Technology</span>
+          <span class="hero-topic-chip">&lt;/&gt; Real Projects</span>
+          <span class="hero-topic-chip">🎨 Creative Tech</span>
+          <span class="hero-topic-chip">🚀 Entrepreneurship</span>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-3 mb-8">
+          <a href="#book" class="btn-primary btn-lg">Book a Free Call &rarr;</a>
+          <a href="#about" class="btn-ghost-dark btn-lg">Meet the Mentor &darr;</a>
+        </div>
+
+        <!-- Location cards -->
+        <div class="hero-location-cards">
+          <div class="hero-loc-card">
+            <div class="hero-loc-icon">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+            </div>
+            <div>
+              <p class="hero-loc-title">Online</p>
+              <p class="hero-loc-sub">Anywhere · Flexible</p>
+            </div>
+          </div>
+          <div class="hero-loc-divider" aria-hidden="true"></div>
+          <div class="hero-loc-card">
+            <div class="hero-loc-icon">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <p class="hero-loc-title">Naples, FL</p>
+              <p class="hero-loc-sub">In-Person · Local</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHO IT'S FOR ─── -->
+  <section class="bg-amber-50 py-16 px-5">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="mb-8">
+        <p class="section-label">Who This Is For</p>
+        <h2 class="section-heading">Is This Right for Your Teen?</h2>
+      </div>
+
+      <!-- Two info blocks -->
+      <div class="who-blocks">
+        <div class="who-block">
+          <span class="who-block-title">Ages 13–18</span>
+          <p>Curious, motivated teens who want to do more than just consume technology.</p>
+        </div>
+        <div class="who-block">
+          <span class="who-block-title">No experience needed</span>
+          <p>The mentorship starts with a free consultation to understand your teen's goals, then a personalized path is built around them.</p>
+        </div>
+      </div>
+
+      <!-- Separator -->
+      <div class="ba-separator">
+        <div class="ba-separator-line"></div>
+        <span class="ba-separator-label">The Transformation</span>
+        <div class="ba-separator-line"></div>
+      </div>
+
+      <!-- Before / After blocks -->
+      <div class="ba-blocks">
+
+        <div class="ba-block ba-block--before">
+          <img src="public/before.png" alt="Before mentorship" class="ba-block-img" />
+          <div class="ba-block-content">
+            <p class="ba-block-label">Before</p>
+            <ul class="ba-list">
+              <li>Scrolling through content all summer</li>
+              <li>"I don't know what to do with AI"</li>
+              <li>Has ideas but doesn't know how to start</li>
+              <li>Bored and disengaged with school programs</li>
+              <li>Watching others build things online</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ba-block ba-block--after">
+          <img src="public/after.png" alt="After mentorship" class="ba-block-img" />
+          <div class="ba-block-content">
+            <p class="ba-block-label">After</p>
+            <ul class="ba-list">
+              <li>A real project built from their own idea</li>
+              <li>Using AI tools with confidence and skill</li>
+              <li>Knows how to turn ideas into real things</li>
+              <li>Excited, curious, and motivated to create</li>
+              <li>Building things themselves</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── WHY DIFFERENT ─── -->
+  <section class="bg-white py-16 px-5">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-10">
+        <p class="section-label">Why This Is Different</p>
+        <h2 class="section-heading">This Is Not a Coding Class</h2>
+        <p class="section-sub max-w-xl">
+          Traditional school programs and online courses follow fixed curricula. This doesn't.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div class="diff-card">
+          <div class="diff-icon">🏗️</div>
+          <h3 class="font-display text-lg font-semibold mb-2">Real Projects, Not Memorization</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">The goal is for your teen to leave with something they actually built &mdash; a working app, tool, website, or creative project they're proud of.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">🎯</div>
+          <h3 class="font-display text-lg font-semibold mb-2">Fully Personalized Path</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">No fixed curriculum. The mentorship is designed around your teen's specific interests, goals, and learning style &mdash; built after the first conversation.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">🔧</div>
+          <h3 class="font-display text-lg font-semibold mb-2">Taught by a Practicing Builder</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Not a teacher following a script &mdash; an engineer and entrepreneur actively building real products and AI systems today, sharing how it actually works.</p>
+        </div>
+      </div>
+
+      <blockquote class="border-l-4 border-amber-400 pl-6 py-1 max-w-2xl">
+        <p class="font-display text-xl text-slate-700 italic leading-relaxed">"The goal is not simply to memorize technical concepts. The goal is to help teenagers think creatively, build confidence with technology, and start creating things."</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section id="about" class="about-dark relative overflow-hidden py-16 px-5">
+    <div class="max-w-5xl mx-auto">
+
+      <!-- Photo + bio row -->
+      <div class="about-main-grid">
+
+        <!-- Photo -->
+        <div class="about-photo-wrap">
+          <img src="public/avatar2.png" alt="Sergii Puzankov" class="about-photo" />
+        </div>
+
+        <!-- Bio -->
+        <div class="about-bio">
+          <p class="section-label-light">About the Mentor</p>
+          <h2 class="font-display text-3xl font-semibold text-white mb-4">Sergii Puzankov</h2>
+
+          <div class="space-y-3 text-slate-300 leading-relaxed text-sm sm:text-base mb-6">
+            <p>
+              I'm a technology leader, entrepreneur, and mentor with 20+ years of real-world experience building software products, AI systems, and technology companies.
+            </p>
+            <p>
+              I've worked in engineering leadership at <strong class="text-white">Wix</strong>, <strong class="text-white">Getty Images</strong>, and <strong class="text-white">Yandex</strong>, led engineering teams, and helped build platforms used by millions of users worldwide.
+            </p>
+            <p>
+              I've spent years teaching and mentoring in technology — speaking at international conferences and creating educational content with more than <strong class="text-white">4 million views</strong> online. As an engineer and entrepreneur actively building real products today, I help teenagers move from consuming technology to building it.
+            </p>
+          </div>
+
+          <a href="https://linkedin.com/in/puzankov" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium text-amber-400 hover:text-amber-300 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            linkedin.com/in/puzankov
+          </a>
+        </div>
+      </div>
+
+      <!-- 3 stat highlight cards -->
+      <div class="about-stats-grid">
+        <div class="about-stat-card">
+          <div class="about-stat-num">20+</div>
+          <div class="about-stat-title">Years of Experience</div>
+          <div class="about-stat-desc">Building real software products, AI systems, and technology companies</div>
+        </div>
+        <div class="about-stat-card">
+          <div class="about-stat-companies">Wix · Getty Images · Yandex</div>
+          <div class="about-stat-title">Engineering Leadership</div>
+          <div class="about-stat-desc">Led teams and launched platforms used by millions of users worldwide</div>
+        </div>
+        <div class="about-stat-card">
+          <div class="about-stat-num">4M+</div>
+          <div class="about-stat-title">Educational Content Views</div>
+          <div class="about-stat-desc">International speaker and educator in technology and software development</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── TRACKS ─── -->
+  <section id="tracks" class="bg-white py-16 px-5">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-10">
+        <p class="section-label">Possible Mentorship Tracks</p>
+        <h2 class="section-heading">Built Around Your Teen's Interests</h2>
+        <p class="section-sub max-w-xl">
+          Your teen's path is personalized after the free consultation. Tracks can be mixed and adapted based on what excites them most.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+        <div class="track-card">
+          <div class="track-icon">🤖</div>
+          <div>
+            <h3 class="font-display text-xl font-semibold mb-1">AI &amp; Productivity</h3>
+            <p class="text-slate-500 text-sm mb-3">Learn how to use modern AI tools effectively and responsibly.</p>
+            <ul class="track-list">
+              <li>AI assistants and custom workflows</li>
+              <li>Productivity and automation systems</li>
+              <li>AI-powered research tools</li>
+              <li>Prompting and AI thinking skills</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="track-card">
+          <div class="track-icon">🏗️</div>
+          <div>
+            <h3 class="font-display text-xl font-semibold mb-1">Building Real Things</h3>
+            <p class="text-slate-500 text-sm mb-3">Turn ideas into real digital products and projects.</p>
+            <ul class="track-list">
+              <li>Websites and web apps</li>
+              <li>Startup MVPs and prototypes</li>
+              <li>Interactive tools and simple games</li>
+              <li>Chrome extensions and digital products</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="track-card">
+          <div class="track-icon">🎨</div>
+          <div>
+            <h3 class="font-display text-xl font-semibold mb-1">Creative Technology</h3>
+            <p class="text-slate-500 text-sm mb-3">Explore technology through creativity and experimentation.</p>
+            <ul class="track-list">
+              <li>AI image and video generation</li>
+              <li>Creative digital experiences</li>
+              <li>AI-assisted design and content</li>
+              <li>Portfolio and passion projects</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="track-card">
+          <div class="track-icon">🚀</div>
+          <div>
+            <h3 class="font-display text-xl font-semibold mb-1">Entrepreneurship &amp; Startup Thinking</h3>
+            <p class="text-slate-500 text-sm mb-3">Learn how modern digital businesses and startups are built.</p>
+            <ul class="track-list">
+              <li>Product thinking and startup ideas</li>
+              <li>Internet business models</li>
+              <li>Problem solving and validation</li>
+              <li>Turning ideas into real projects</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HOW IT WORKS ─── -->
+  <section id="how-it-works" class="bg-amber-50 py-16 px-5">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-10">
+        <p class="section-label">Mentorship Format</p>
+        <h2 class="section-heading">How It Works</h2>
+        <p class="section-sub max-w-xl">
+          A structured but flexible experience designed around your teen's summer schedule.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 class="font-display text-base font-semibold mb-1">Free Consultation</h3>
+          <p class="text-slate-500 text-sm">Parent and teen join a free intro call to discuss interests, goals, and fit.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 class="font-display text-base font-semibold mb-1">Personalized Path</h3>
+          <p class="text-slate-500 text-sm">A custom mentorship plan is created based on the consultation.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 class="font-display text-base font-semibold mb-1">Weekly Sessions</h3>
+          <p class="text-slate-500 text-sm">1-on-1 sessions via Zoom or Google Meet, or in-person in Naples, FL.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3 class="font-display text-base font-semibold mb-1">Real Project</h3>
+          <p class="text-slate-500 text-sm">Your teen finishes the summer with a real project they built themselves.</p>
+        </div>
+      </div>
+
+      <div class="format-stats">
+        <div class="format-stat">
+          <div class="format-stat-icon">📅</div>
+          <div class="format-stat-value">6–8</div>
+          <div class="format-stat-label">Weeks</div>
+        </div>
+        <div class="format-stat">
+          <div class="format-stat-icon">👤</div>
+          <div class="format-stat-value">1-on-1</div>
+          <div class="format-stat-label">Sessions</div>
+        </div>
+        <div class="format-stat">
+          <div class="format-stat-icon">🌐</div>
+          <div class="format-stat-value">Naples, FL</div>
+          <div class="format-stat-label">/ Online</div>
+        </div>
+        <div class="format-stat">
+          <div class="format-stat-icon">⏱️</div>
+          <div class="format-stat-value">Flexible</div>
+          <div class="format-stat-label">Scheduling</div>
+        </div>
+      </div>
+
+      <p class="text-slate-400 text-sm mt-5">
+        Mentorship format and pricing are personalized based on the student's goals, schedule, and preferred learning structure.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIALS ─── -->
+  <section class="bg-white py-16 px-5">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-10">
+        <p class="section-label">What Students Say</p>
+        <h2 class="section-heading">Results That Speak</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+        <div class="testimonial-card">
+          <img src="public/testimonials/testimonial__emili.png" alt="Emily Prudman" class="testimonial-photo" />
+          <div class="testimonial-body">
+            <p class="testimonial-name">Emily Prudman</p>
+            <p class="testimonial-quote">"In a relatively short time, I gained a huge amount of practical knowledge, learned new ways of thinking and problem-solving, and became much more confident in approaching real projects and challenges. What makes Sergii special is not only his professionalism and deep experience, but also his ability to inspire and motivate."</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <img src="public/testimonials/testimonial__adam.jpg" alt="Adam Solov" class="testimonial-photo" />
+          <div class="testimonial-body">
+            <p class="testimonial-name">Adam Solov</p>
+            <p class="testimonial-quote">"Sergii is one of the rare mentors who naturally combines charisma, humor, real-world experience, and the ability to explain complex ideas in a very accessible way. He never simply gave answers — he guided me toward finding solutions myself, which became incredibly valuable for my future growth and confidence."</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <img src="public/testimonials/testimonial__igor.jpg" alt="Igor Ivanen" class="testimonial-photo" />
+          <div class="testimonial-body">
+            <p class="testimonial-name">Igor Ivanen</p>
+            <p class="testimonial-quote">"His approach was very different from traditional education — instead of focusing only on theory, he constantly connected ideas to real-world projects. He has a unique ability to keep students engaged and create a relaxed, motivating atmosphere where learning feels natural and inspiring."</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <img src="public/testimonials/testimonial__max.png" alt="Max Kochan" class="testimonial-photo" />
+          <div class="testimonial-body">
+            <p class="testimonial-name">Max Kochan</p>
+            <p class="testimonial-quote">"Sergii has a rare talent for making difficult concepts understandable and engaging. Sessions always felt active, interactive, and personalized. Beyond knowledge itself, he helped build confidence, curiosity, and motivation to continue learning and growing further."</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BOOK A CALL ─── -->
+  <section id="book" class="bg-amber-50 py-16 px-5">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="section-label">Get Started</p>
+      <h2 class="section-heading">Start with a Free Introductory Call</h2>
+      <p class="section-sub max-w-xl mx-auto mb-8">
+        A free consultation is available for parents and students. During the call we discuss interests and goals, possible project directions, mentorship format, scheduling, and expectations &mdash; with no commitment required.
+      </p>
+
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget mb-8" data-url="https://calendly.com/puzankov-sd/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=f59e0b" style="min-width:320px;height:750px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
+
+      <p class="text-amber-700 text-sm font-medium bg-amber-100 rounded-full px-4 py-2 inline-block mb-4">
+        A limited number of spots are available for Summer 2026.
+      </p>
+
+      <div class="flex flex-col items-center gap-1">
+        <p class="text-slate-400 text-sm">Questions? Call or text:</p>
+        <a href="tel:+12393020917" class="inline-flex items-center gap-2 font-semibold text-slate-800 hover:text-amber-600 transition-colors text-lg">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/></svg>
+          (239) 302-0917
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─── -->
+  <section id="faq" class="bg-white py-16 px-5">
+    <div class="max-w-2xl mx-auto">
+      <div class="mb-10 text-center">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-heading">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-2" id="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Does my teen need prior experience?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-body">
+            <p>No experience is needed. Mentorship is fully personalized to your teen's current level &mdash; whether they're complete beginners or already know a bit of coding. The free consultation helps determine the right starting point.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>What ages do you work with?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-body">
+            <p>The mentorship is designed for teenagers ages 13–18. The approach adapts to each student's maturity, experience, and learning style.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Where do sessions take place?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-body">
+            <p>Sessions are held online via Zoom or Google Meet. In-person sessions are also available for families in the Naples, Florida area.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>How long is the program?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-body">
+            <p>The summer mentorship experience is 6–8 weeks. Scheduling is flexible and designed around your teen's summer plans and availability.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>What will my teen actually have at the end?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-body">
+            <p>A real project they built themselves &mdash; a working app, website, tool, creative piece, or prototype. The specific outcome depends on the track and the student's interests, but the goal is always something concrete and meaningful.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>How is this different from online coding courses or school programs?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-body">
+            <p>This is 1-on-1 and fully personalized &mdash; not a fixed curriculum your teen watches or follows passively. The focus is on building real things and developing independent thinking, not completing assignments. It's also led by someone actively building products today, not a teacher delivering a script.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>How much parental involvement is expected?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-body">
+            <p>Parents are included in the free introductory consultation. Ongoing sessions are primarily with the student. Parents are welcome to stay involved as much or as little as they prefer.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>How do we get started?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-body">
+            <p>Book a free introductory consultation using the scheduling block above, or call/text directly at <a href="tel:+12393020917" class="text-amber-600 hover:underline">(239) 302-0917</a>. No commitment required &mdash; it's just a conversation to see if it's a good fit.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="bg-slate-900 py-10 px-5">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="nav-logo nav-logo-dark">AI <span class="nav-logo-accent">Mentorship</span> for Teens</p>
+        <p class="text-slate-500 text-sm mt-1">Summer 2026 · Sergii Puzankov</p>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="https://linkedin.com/in/puzankov" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors text-sm">LinkedIn</a>
+        <a href="tel:+12393020917" class="text-slate-400 hover:text-white transition-colors text-sm">(239) 302-0917</a>
+        <a href="#book" class="btn-primary">Book a Free Call</a>
+      </div>
+    </div>
+    <div class="max-w-5xl mx-auto mt-6 pt-6 border-t border-slate-800">
+      <p class="text-slate-600 text-xs text-center">&copy; 2026 Sergii Puzankov. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on nav link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.faq-item');
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          i.classList.remove('faq-open');
+        });
+
+        // Open clicked (if it was closed)
+        if (!isOpen) {
+          trigger.setAttribute('aria-expanded', 'true');
+          item.classList.add('faq-open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
