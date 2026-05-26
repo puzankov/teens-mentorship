@@ -84,7 +84,7 @@
 /* ── Hero (light, full-bg image) ── */
 .hero-section {
   background-color: #e0f2fe;
-  background-image: url('public/hero1.png');
+  background-image: url('public/webp/hero1.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -658,7 +658,7 @@
   background: white;
   transition: border-color 0.15s;
 }
-.faq-item.faq-open {
+.faq-item[open] {
   border-color: #fde68a;
 }
 .faq-trigger {
@@ -676,7 +676,9 @@
   font-weight: 600;
   color: #1e293b;
   font-family: 'Inter', sans-serif;
+  list-style: none;
 }
+.faq-trigger::-webkit-details-marker { display: none; }
 .faq-trigger:hover { background: #fafafa; }
 .faq-icon {
   width: 1.125rem;
@@ -685,18 +687,11 @@
   flex-shrink: 0;
   transition: transform 0.2s ease;
 }
-.faq-open .faq-icon {
+.faq-item[open] .faq-icon {
   transform: rotate(180deg);
   color: #f59e0b;
 }
 .faq-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.25s ease, padding 0.25s ease;
-  padding: 0 1.25rem;
-}
-.faq-open .faq-body {
-  max-height: 300px;
   padding: 0 1.25rem 1.25rem;
 }
 .faq-body p {
